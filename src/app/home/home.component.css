@@ -1,0 +1,28 @@
+.parentClass {
+  display: flex;
+  padding-top: 5%;
+  justify-content: center;
+}
+.childClass {
+  padding: 10px;
+  border: 1px solid;
+  border-radius: 10px;
+}
+
+.imgStyle {
+  height: 500px;
+  width: 500px;
+  margin-bottom: 20px;
+}
+.centerDiv {
+  display: flex;
+  justify-content: center;
+}
+.flexClassY {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.labelClass {
+  font-size: 22px;
+}
