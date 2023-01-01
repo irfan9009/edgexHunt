@@ -1,25 +1,25 @@
 <div class="container">
   <div class="parentClass">
     <div class="childClass">
-      <form class="cardTemplate flexClassY">
+      <form
+        #myform="ngForm"
+        (ngSubmit)="register(myform)"
+        class="form form-register"
+        class="cardTemplate flexClassY"
+      >
         <label for="exampleInputEmail1" class="form-label labelClass"
           >Email address</label
         >
         <input
+          name="email"
+          ngModel
           type="email"
           class="form-control mb-3"
           id="exampleInputEmail1"
           aria-describedby="emailHelp"
         />
 
-        <button
-          routerLink="/home"
-          routerLinkActive="active"
-          type="submit"
-          class="btn btn-primary buttonLogin"
-        >
-          Login
-        </button>
+        <button type="submit" class="btn btn-primary buttonLogin">Login</button>
       </form>
     </div>
   </div>
