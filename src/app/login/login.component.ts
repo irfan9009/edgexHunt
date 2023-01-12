@@ -2,9 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { HttpHeaders } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { catchError, retry, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-login',
@@ -19,12 +16,9 @@ export class LoginComponent implements OnInit {
   register(form: NgForm) {
     console.log(form.value.email);
     const headers = { 'content-type': 'application/json' };
+    const params = { email: form.value.email };
     this.http
-      .post<any>(
-        'http://localhost:3000/user/login',
-        { email: form.value.email },
-        { headers }
-      )
+      .get<any>('http://localhost:3000/user/login', { headers, params })
       .subscribe({
         next: this.handleSuccess.bind(this),
         error: this.handleError.bind(this),
@@ -32,6 +26,7 @@ export class LoginComponent implements OnInit {
   }
   handleSuccess(result: any) {
     console.log('result :>> ', result);
+    this.router.navigate(['home']);
   }
   handleError(error: any) {
     console.log('error :>> ', error);

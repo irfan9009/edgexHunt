@@ -1,17 +1,13 @@
 <div class="container bodyStyle">
   <div class="parentClass">
     <div class="childClass">
-      <form>
-        <img
-          class="imgStyle"
-          src="https://media.wired.com/photos/5f87340d114b38fa1f8339f9/master/w_1600%2Cc_limit/Ideas_Surprised_Pikachu_HD.jpg"
-          alt=""
-        />
+      <form #myform="ngForm" (ngSubmit)="register(myform)">
+        <img class="imgStyle" src="../../assets/Puzzle2.jpg" alt="" />
         <div class="mb-3 flexClassY">
           <label for="exampleInputEmail1" class="form-label labelClass"
             >Enter your answer below</label
           >
-          <input type="text" class="form-control" />
+          <input name="answer" ngModel type="text" class="form-control" />
         </div>
         <div class="centerDiv">
           <button
