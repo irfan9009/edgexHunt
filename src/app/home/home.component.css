@@ -26,3 +26,7 @@
 .labelClass {
   font-size: 22px;
 }
+.warningMessage {
+  font-size: 22px;
+  color: red;
+}

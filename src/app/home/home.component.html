@@ -9,8 +9,12 @@
           >
           <input name="answer" ngModel type="text" class="form-control" />
         </div>
+        <div>
+          <p class="warningMessage text-center">{{ wrongAnswer }}</p>
+        </div>
         <div class="centerDiv">
           <button
+            [disabled]="submitDisable ? true : false"
             routerLink="/home"
             routerLinkActive="active"
             type="submit"

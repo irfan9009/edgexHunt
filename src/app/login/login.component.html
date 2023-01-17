@@ -7,9 +7,8 @@
         class="form form-register"
         class="cardTemplate flexClassY"
       >
-        <label for="exampleInputEmail1" class="form-label labelClass"
-          >Email address</label
-        >
+        <img class="logoStyle" src="../../assets/BGT.png" alt="" />
+
         <input
           name="email"
           ngModel
@@ -17,9 +16,19 @@
           class="form-control mb-3"
           id="exampleInputEmail1"
           aria-describedby="emailHelp"
+          placeholder="Enter your HealthEdge Email address"
         />
 
-        <button type="submit" class="btn btn-primary buttonLogin">Login</button>
+        <button
+          type="submit"
+          [disabled]="submitDisable ? true : false"
+          class="btn btn-primary buttonLogin"
+        >
+          Login
+        </button>
+        <div>
+          <p class="warningMessage text-center">{{ validationmessage }}</p>
+        </div>
       </form>
     </div>
   </div>
